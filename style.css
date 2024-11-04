@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.file-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#videoElement {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.controls button,
+.speed-controls button {
+    background: linear-gradient(45deg, #8b5cf6, #6366f1);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.controls button:hover,
+.speed-controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(147, 51, 234, 0.4);
+}
+
+.speed-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.speed-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.speed-display {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #8b5cf6, #6366f1);
+    outline: none;
+    margin: 20px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e94560;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+#fileInput {
+    display: none;
+}
+
+.file-input-label {
+    background: linear-gradient(45deg, #8b5cf6, #6366f1);
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.file-input-label:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(147, 51, 234, 0.4);
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .controls,
+    .speed-buttons {
+        flex-direction: column;
+    }
+}
+
+#videoElement {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+    z-index: 0;
+}
+
+
+/* Existing styles... */
+
+.controls button,
+.speed-controls button {
+    background: linear-gradient(45deg, #8b5cf6, #6366f1);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.controls button:hover,
+.speed-controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(147, 51, 234, 0.4);
+}
+
+
+/* New styles for selected state */
+
+.selected {
+    background-color: #e94560;
+    /* Highlight color for selected state */
+}
+
+
+/* Rest of your existing styles... */
